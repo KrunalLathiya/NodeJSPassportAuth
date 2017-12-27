@@ -1,0 +1,35 @@
+<header>
+	<nav class="navbar navbar-default" role="navigation">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<a class="navbar-brand" href="#">
+					Express Auth App
+				</a>
+				<ul class="nav navbar-nav">
+					  <% if(user){ %>
+						  <li><a href="/">Home</a></li>
+						  <li><a href="/users/logout">Logout</a></li>
+						<% } else{ %>  
+						  <li><a href="/users/register">Register</a></li>
+						  <li><a href="/users/login">Login</a></li>
+					   <% } %>
+				</ul>
+			</div>
+		</div>
+	</nav>
+</header>
+<%if (success_message != '') { %>
+	<div class="alert alert-success">
+		<%= success_message %>
+	</div>
+<% } %>
+<%if (error_message != '') { %>
+	<div class="alert alert-danger">
+		<%= error_message %>
+	</div>
+<% } %>
+<%if (error != '') { %>
+	<div class="alert alert-danger">
+		<%= error %>
+	</div>
+<% } %>
